@@ -1,0 +1,21 @@
+<table>
+<tr>
+	<th> Matricula </th>
+	<th> Nome </th>
+	<th> Email </th>
+	<th> Curso </th>
+	<th> Periodo </th>
+</tr>
+
+<% @users.each do |user| %>
+
+<tr>
+<td><%= user.matricula %></td>
+<td><%= user.nome %></td>
+<td><%= user.email %></td>
+<td><%= user.curso %></td>
+<td><%= user.periodo %></td>
+<tr>
+<% end %>
+
+</table>
