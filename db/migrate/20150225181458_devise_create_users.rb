@@ -22,7 +22,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string   :matricula
       t.string   :curso
       t.string   :periodo
-      
+
       ## Confirmable
       # t.string   :confirmation_token
       # t.datetime :confirmed_at
