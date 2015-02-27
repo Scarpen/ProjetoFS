@@ -1,22 +1,9 @@
-<h2>Sign up</h2>
+
 
 <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
-    
-    
-    <%= f.input :curso, required: true%>
-    <%= f.input :periodo, required: true%>
-    <%= f.input :email, required: true%>
-    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @validatable) %>
-    <%= f.input :password_confirmation, required: true %>
-    <%= f.input :role_id, as: :hidden, input_html: { value: '1' } %>
-  </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
 
 <section id="contact">
         <div class="container">
@@ -43,30 +30,53 @@
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label>Matricula</label>
-                                <%= f.input :matricula, required: true, label: false, placeholder: 'Matricula', class: 'form-control', id: 'email', input_html: { maxlength: 62 } %>
+                                <%= f.input :matricula, required: true, label: false, placeholder: 'Matricula', class: 'form-control', id: 'matricula', input_html: { maxlength: 62 } %>
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
-                                <label>Phone Number</label>
-                                <input type="tel" class="form-control" placeholder="Phone Number" id="phone" required data-validation-required-message="Please enter your phone number.">
+                                <label>Curso</label>
+                                <%= f.input :curso, required: true, label: false, placeholder: 'Curso', class: 'form-control', id: 'curso', input_html: { maxlength: 62 }%>                        
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
-                                <label>Message</label>
-                                <textarea rows="5" class="form-control" placeholder="Message" id="message" required data-validation-required-message="Please enter a message."></textarea>
+                                <label>Período</label>
+                                    <%= f.input :periodo, required: true, label: false, placeholder: 'Período', class: 'form-control', id: 'periodo', input_html: { maxlength: 62 }%>
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label>E-mail</label>
+                                        <%= f.input :email, required: true, label: false, placeholder: 'Email', class: 'form-control', id: 'email', input_html: { maxlength: 62 }%>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label>Senha</label>
+                                    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @validatable) , label: false, placeholder: 'Senha', class: 'form-control', id: 'senha', input_html: { maxlength: 62 }%>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label>Confirmar Senha</label>
+                                    <%= f.input :password_confirmation, required: true, label: false, placeholder: 'Confirmar Senha', class: 'form-control', id: 'confirmar_senha', input_html: { maxlength: 62 }%>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <%= f.input :role_id, as: :hidden, input_html: { value: '1' } %>
                         
                         <br>
                         <div id="success"></div>
                         <div class="row">
-                            <div class="form-group col-xs-12">
-                                <button type="submit" class="btn btn-success btn-lg">Send</button>
+                            <div class="form-group col-xs-12" align="center">
+                                <%= f.button :submit, "Enviar", class: 'btn btn-success btn-lg' %>
+                                
                             </div>
                         </div>
                     </form>
