@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'index#index'
   get 'lista_usuario' => 'index#lista_usuarios'
   devise_for :users
+  resources :arquivos
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
