@@ -22,7 +22,7 @@
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label>Nome</label>
-                                <%= f.input :nome, required: true, autofocus: true, label: false, placeholder: 'Nome Completo', class: 'form-control',id: 'name', input_html: { maxlength: 62 } %>
+                                <%= f.input :nome, required: true, autofocus: true, label: false, placeholder: 'Nome Completo', id: 'name', input_html: { class: 'form-control', maxlength: 62 } %>
                             <!--     <input type="text" class="form-control" placeholder="Name" id="name" required data-validation-required-message="Please enter your name."> -->
                                 <p class="help-block text-danger"></p>
                             </div>
@@ -30,42 +30,42 @@
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label>Matricula</label>
-                                <%= f.input :matricula, required: true, label: false, placeholder: 'Matricula', class: 'form-control', id: 'matricula', input_html: { maxlength: 62 } %>
+                                <%= f.input :matricula, required: true, label: false, placeholder: 'Matricula',  id: 'matricula', input_html: { class: 'form-control',maxlength: 62 } %>
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label>Curso</label>
-                                <%= f.input :curso, required: true, label: false, placeholder: 'Curso', class: 'form-control', id: 'curso', input_html: { maxlength: 62 }%>                        
+                                <%= f.input :curso, required: true, label: false, placeholder: 'Curso', id: 'curso', input_html: { class: 'form-control has-success', maxlength: 62 }%>                        
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label>Período</label>
-                                    <%= f.input :periodo, required: true, label: false, placeholder: 'Período', class: 'form-control', id: 'periodo', input_html: { maxlength: 62 }%>
+                                    <%= f.input :periodo, required: true, label: false, placeholder: 'Período', id: 'periodo', input_html: { class: 'form-control',maxlength: 62 }%>
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label>E-mail</label>
-                                        <%= f.input :email, required: true, label: false, placeholder: 'Email', class: 'form-control', id: 'email', input_html: { maxlength: 62 }%>
+                                        <%= f.input :email, required: true, label: false, placeholder: 'Email',  id: 'email', input_html: { class: 'form-control',maxlength: 62 }%>
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label>Senha</label>
-                                    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @validatable) , label: false, placeholder: 'Senha', class: 'form-control', id: 'senha', input_html: { maxlength: 62 }%>
+                                    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @validatable) , label: false, placeholder: 'Senha', id: 'senha', input_html: { class: 'form-control', maxlength: 62 }%>
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label>Confirmar Senha</label>
-                                    <%= f.input :password_confirmation, required: true, label: false, placeholder: 'Confirmar Senha', class: 'form-control', id: 'confirmar_senha', input_html: { maxlength: 62 }%>
+                                    <%= f.input :password_confirmation, required: true, label: false, placeholder: 'Confirmar Senha', id: 'confirmar_senha', input_html: { class: 'form-control', maxlength: 62 }%>
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
