@@ -3,13 +3,15 @@ class ArquivosController < ApplicationController
 		@arquivo = Arquivo.new
 	end
 	def create
-		@arquivo = Arquivo.new(params[:arquivo])
-		if @arquivo.save
-			redirect_to action: 'materiais', controller: 'diciplinas', id: id, notice: "Arquivo Enviado com sucesso"
+		@arquivo = Arquivo.new(arquivo_params)
 
+		if @arquivo.save
+			redirect_to root_path, notice: "Arquivo Enviado com sucesso"
 		end
 	end
-
+  	def arquivo_params
+    params.require(:arquivo).permit(:name,:filename, :arquivo_cache, :arquivo, :user_id)
+  	end
 
 	def show
 		@arquivo = Arquivo.find(params[:id])
@@ -20,6 +22,12 @@ class ArquivosController < ApplicationController
 			redirect_to action: 'materiais', controller: 'diciplinas', id: id
 		else
 		end
+	end
+
+	def download
+		arquivo = Arquivo.find(params[:meuar])
+		urlcomplete = "#{Rails.root}/public" << arquivo.arquivo.url
+		send_file urlcomplete
 	end
 
 end

@@ -1,0 +1,30 @@
+<table>
+<tr>
+	<th> Matricula </th>
+	<th> Nome </th>
+	<th> Email </th>
+	<th> Curso </th>
+	<th> Periodo </th>
+	<th> Arquivo </th>
+</tr>
+
+<% @users.each do |user| %>
+
+<tr>
+<td><%= user.matricula %></td>
+<td><%= user.nome %></td>
+<td><%= user.email %></td>
+<td><%= user.curso %></td>
+<td><%= user.periodo %></td>
+<td> 
+<% Arquivo.all.each do |d| %>
+<% if d.user_id == user.id %>
+<%= link_to "download", {:action => 'download', :controller => 'arquivos', :meuar => d} ,:class => 'btn btn-mini btn-primary' %> 
+<% end %>
+<% end %>
+</td>
+<tr>
+
+<% end %>
+
+</table>
