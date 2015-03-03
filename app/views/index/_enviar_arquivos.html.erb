@@ -1,0 +1,25 @@
+
+<section id="alunos">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Envie o Seu Desafio</h2>
+                    <hr class="star-primary">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+					<%= form_for(@arquivo) do |f| %>
+
+						<%= f.file_field :arquivo %>
+
+						<%= f.hidden_field :user_id, {:value => current_user.id} %>
+
+						<%= f.submit 'Enviar' %> 
+					<% end %> 
+                </div>
+            </div>
+        </div>
+        
+    </section>

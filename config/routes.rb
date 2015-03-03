@@ -4,14 +4,13 @@ Rails.application.routes.draw do
     get 'lista_usuario' => 'index#lista_usuarios'
    devise_for :users do
     get '/users/sign_out' => 'devise/sessions#destroy'
+    get "signup", :to => "devise/registrations#new"
   end
   resources :arquivos do
     collection do
       get 'download'
     end
   end
-
-
 
 
   # The priority is based upon order of creation: first created -> highest priority.

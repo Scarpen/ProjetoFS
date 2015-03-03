@@ -1,0 +1,71 @@
+    <header>
+        <div class="container">
+		<% if user_signed_in? %>
+		  <div class="col-md-12">
+		<% else %>
+		  <div class="col-md-8">
+		<% end %>
+			<div class="txtindex">
+			<h1 class="center">Participe da Fabsoft</h1>
+			</br>
+				<div class="col-sm-12 center">
+<!-- 					<div class="col-sm-2">
+						<h1 class="fa fa-lightbulb-o fa-4x" style="color: #FFFEA7; text-shadow: 0 0 10px #F3F610; font-size: 100px"></h1>
+						<%= image_tag('student.png', width: '150', height: '150' ) %>
+					</div> -->
+					<div class="col-sm-12">
+						<div id="carousel-example-generic" class="carousel slide container-fluid" data-ride="carousel">				
+							<div class="carousel-inner">
+								<div class="item active">
+											<h3>Inscreva seu projeto</h3>
+								</div>
+<!-- 
+								<div class="item">
+											<h3> Registre suas Ideias, busque parceiros para transforma-las em negócios</h3>
+								</div> -->
+
+								
+							</div>
+						</div>
+						</br>
+						</br>
+						</br>
+						</br>
+					</div>
+				</div>		
+				</br>
+				<section class="center">
+				</section>
+
+			</div>
+		</div>
+
+		<% unless user_signed_in? %>	
+			<div class="col-xs-12 col-sm-12 col-md-4">
+				<div class=" login-index ">
+					<div id="myTabContent" class="tab-content container-fluid well">
+
+							<%= form_for(:user, :url => session_path(:user)) do |f| %>
+
+								<div style="text-align: left">
+									<label for="email" style="color: black"> Email: </label>
+									<%= f.email_field :email, autofocus: true, class: "form-control", id: "email", placeholder: "exemplo@email.com"%></br>
+								</div>
+
+								<div style="text-align: left">
+									<label for="password" style="color: black">Senha:</label>
+									<%= f.password_field :password, autocomplete: "off",class:"form-control", id:"password", placeholder: "" %>
+								</div>
+								</br>
+
+								<div style="text-align: left">
+									<%= f.submit "Entrar", class: "btn btn-mini btn-primary col-xs-12 "%>
+								</div>
+							<% end %>
+
+					</div>
+				</div>
+			</div>
+		<% end %>
+		        </div>
+    </header>
