@@ -44,7 +44,12 @@
 			<div class="col-xs-12 col-sm-12 col-md-4">
 				<div class=" login-index ">
 					<div id="myTabContent" class="tab-content container-fluid well">
-
+							<% if notice %>
+							  <p class="alert alert-success"><%= notice %></p>
+							<% end %>
+							<% if alert %>
+							  <p class="alert alert-danger"><%= alert %></p>
+							<% end %>
 							<%= form_for(:user, :url => session_path(:user)) do |f| %>
 
 								<div style="text-align: left">

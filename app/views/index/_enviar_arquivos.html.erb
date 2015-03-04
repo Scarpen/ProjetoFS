@@ -11,6 +11,7 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2">
 					<center>
+                    <%if current_user.arquivos == nil %>
                     <%= form_for(@arquivo) do |f| %>
 
 						<%= f.file_field :arquivo, class: "btn btn-primary" %>
@@ -19,7 +20,10 @@
                         <br>
                         <br>
 						<%= f.submit 'Enviar', class: "btn btn-primary"%> 
-					<% end %> 
+					<% end %>
+                    <%else%>
+                    <h3> "Você já enviou seu desafio!" </h3>
+                    <% end %>
                     </center>
                 </div>
             </div>
