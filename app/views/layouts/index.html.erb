@@ -37,21 +37,25 @@
 
     <!-- Navigation -->
     <%= render 'navbar' %>
-
     <!-- Header -->
 
     <%= render 'topo' %>
-
-
 
     <!-- About Section -->
     <%= render 'sobre' %>
 
     <!-- Contact Section -->
     <% if current_user %>
-    <%= render 'enviar_arquivos' %>
+        <% if current_user.role.nome == "admin" %>
+            <%= render 'lista_usuarios' %>
+        <% end %>
+        <% if current_user.role.nome == "inscrito"%>
+            <%= render 'enviar_arquivos' %>
+        <% end %>
+
+    
     <% end %>
-    <%= render 'lista_usuarios' %>
+    
 
     <%= render 'inscricao' %>
 

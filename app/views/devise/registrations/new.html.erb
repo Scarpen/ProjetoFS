@@ -1,22 +1,88 @@
-<h2>Sign up</h2>
+<%= render 'navbar' %>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :nome, required: true, autofocus: true %>
-    <%= f.input :matricula, required: true%>
-    <%= f.input :curso, required: true%>
-    <%= f.input :periodo, required: true%>
-    <%= f.input :email, required: true%>
-    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @validatable) %>
-    <%= f.input :password_confirmation, required: true %>
-    <%= f.input :role_id, as: :hidden, input_html: { value: '1' } %>
-  </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
+<% if !current_user %>
+<section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Inscreva-se</h2>
+                    <hr class="star-primary">
+                </div>
+            </div>
 
-<%= render "devise/shared/links" %>
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
+                    <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
+                    <form name="sentMessage" id="contactForm" novalidate>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label>Nome</label>
+                                <%= f.input :nome, required: true, autofocus: true, label: false, placeholder: 'Nome Completo', id: 'name', input_html: { class: 'form-control', maxlength: 62 } %>
+                            <!--     <input type="text" class="form-control" placeholder="Name" id="name" required data-validation-required-message="Please enter your name."> -->
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label>Matricula</label>
+                                <%= f.input :matricula, required: true, label: false, placeholder: 'Matricula',  id: 'matricula', input_html: { class: 'form-control',maxlength: 62 } %>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label>Curso</label>
+                                <%= f.input :curso, required: true, label: false, placeholder: 'Curso', id: 'curso', input_html: { class: 'form-control has-success', maxlength: 62 }%>                        
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label>Período</label>
+                                    <%= f.input :periodo, required: true, label: false, placeholder: 'Período', id: 'periodo', input_html: { class: 'form-control',maxlength: 62 }%>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label>E-mail</label>
+                                        <%= f.input :email, required: true, label: false, placeholder: 'Email',  id: 'email', input_html: { class: 'form-control',maxlength: 62 }%>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label>Senha</label>
+                                    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @validatable) , label: false, placeholder: 'Senha', id: 'senha', input_html: { class: 'form-control', maxlength: 62 }%>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label>Confirmar Senha</label>
+                                    <%= f.input :password_confirmation, required: true, label: false, placeholder: 'Confirmar Senha', id: 'confirmar_senha', input_html: { class: 'form-control', maxlength: 62 }%>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <%= f.input :role_id, as: :hidden, input_html: { value: '1' } %>
+                        
+                        <br>
+                        <div id="success"></div>
+                        <div class="row">
+                            <div class="form-group col-xs-12" align="center">
+                                <%= f.button :submit, "Enviar", class: 'btn btn-mini btn-primary btn-lg' %>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+    <% end %>
+        <% end %>

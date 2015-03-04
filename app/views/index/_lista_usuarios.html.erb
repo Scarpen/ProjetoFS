@@ -22,7 +22,7 @@
 </tr>
 
 <% @users.each do |user| %>
-
+<% if user != current_user %>
 <tr>
 <td><%= user.matricula %></td>
 <td><%= user.nome %></td>
@@ -37,6 +37,7 @@
 <% end %>
 </td>
 <tr>
+<%end%>
 
 <% end %>
 
