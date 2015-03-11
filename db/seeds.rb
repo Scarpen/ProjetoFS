@@ -23,4 +23,7 @@ user.role_id = 2
 user.email = "admin@mail.com"
 user.password = "12345678"
 user.password_confirmation = "12345678"
+user.periodo = "Admin"
+user.curso = "Admin"
+user.matricula = "Admin"
 user.save
