@@ -35,5 +35,5 @@ production:
   encoding: unicode
   database: projeto_production
   pool: 5
-  username: fabsoft
-  password: fabsoft
+  username: 
+  password: 
